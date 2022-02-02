@@ -1,0 +1,44 @@
+.bio{
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4%;
+    font-family: monospace;
+    animation: aparecer 3s;
+}
+.bio h1{
+    font-weight: bold;
+    font-size: 2em;
+}
+.bio p{
+    text-align: justify;
+    margin-top: 6%;
+    font-size: 1.25em;
+}
+.bio p a{
+    text-decoration: none;
+    color: antiquewhite;
+    position: relative;
+    z-index: 1;
+    text-decoration: underline;
+}
+.bio p a:hover{
+    color: white;
+    transition: 0.75s;
+}
+
+@keyframes aparecer{
+    0%{opacity:0;} 
+    100%{opacity:1;}
+}
+
+@media screen and (max-width: 1080px){
+    .bio{
+        width: 70%;
+        margin-bottom: 8%;
+    }
+    body{
+        overflow: visible;
+    }
+}

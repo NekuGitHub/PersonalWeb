@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;  
+  width: 100%;
+  background-color: #171717;
+  color: #000;
+  line-height: 1.6;
+  display: table;
+  position: relative;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+
+/*Efecto escritura*/
+
+.efecto {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.efecto-escritura {
+  width: 30ch;  
+  color: white;
+  font-size: 2em;
+  border-right: 3px solid;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: monospace;
+  animation: efectoesc 3s steps(33), parpadeo 0.4s step-end infinite alternate;
+}
+
+@keyframes efectoesc {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes parpadeo {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.efecto-escritura a{
+  color: antiquewhite;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.efecto-escritura a:hover{
+  color: white;
+  transition: 0.75s;
+}
+
+
+/*Efectos de lineas*/
+
+.lineas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+
+.linea {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.linea::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  -webkit-animation: caida 7s 0s infinite;
+  animation: caida 7s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+.linea:nth-child(1) {
+  margin-left: -25%;
+}
+.linea:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.linea:nth-child(2) {
+  margin-left: 25%;
+}
+.linea:nth-child(2)::after {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+@-webkit-keyframes caida {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes caida {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 1080px){
+  .lineas{
+    display: none;
+  }
+  .efecto-escritura{
+    display: flex;
+    flex-direction: column;
+    font-size: 3.75em;
+  }
+}
