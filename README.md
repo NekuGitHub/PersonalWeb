@@ -1,2 +1,2 @@
 # PersonalWeb
-My personal web, will be gradually updated. Contact me via sanchezgaldameseneko@gmail.com
+Personal web design. Contact me via sanchezgaldameseneko@gmail.com
